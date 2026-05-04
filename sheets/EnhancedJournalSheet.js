@@ -205,7 +205,7 @@ export class EnhancedJournalSheet extends HandlebarsApplicationMixin(foundry.app
                 }
             }
         }
-
+        
         if (!game.user.isGM) {
             // Remove any tabs that don't have content if the user isn't a GM
             if (Object.keys(foundry.utils.getProperty(this.document, "flags.monks-enhanced-journal.relationships") || {}).length === 0) {
@@ -2688,7 +2688,7 @@ export class EnhancedJournalSheet extends HandlebarsApplicationMixin(foundry.app
                     let otherRelationships = foundry.utils.duplicate(foundry.utils.getProperty(page, "flags.monks-enhanced-journal.relationships") || {});
                     let otherRelationship = Object.values(otherRelationships).find(value => value.uuid == this.document.uuid || value.uuid == this.document.parent.uuid);
                     if (otherRelationship) {
-                        otherRelationship.hidden = !otherRelationship.hidden;
+                        otherRelationship.hidden = items[id].hidden;
                         page.setFlag('monks-enhanced-journal', "relationships", otherRelationships);
                     }
                 }
