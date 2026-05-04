@@ -205,13 +205,14 @@ export class EnhancedJournalSheet extends HandlebarsApplicationMixin(foundry.app
                 }
             }
         }
-        
+        /* TODO: Make it a settings toggle
         if (!game.user.isGM) {
             // Remove any tabs that don't have content if the user isn't a GM
             if (Object.keys(foundry.utils.getProperty(this.document, "flags.monks-enhanced-journal.relationships") || {}).length === 0) {
                 delete tabs.relationships;
             }
         }
+        */
 
         return tabs;
     }
